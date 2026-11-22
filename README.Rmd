@@ -11,11 +11,26 @@ knitr::opts_chunk$set(
 )
 ```
 
-# vietnam-gibbon-automated-detection
+# Associated Paper
 
-<!-- badges: start -->
-<!-- badges: end -->
+Vu, T. T., Dang, K. D., Nguyen, H. T., Le, S. T., & Clink, D. J. (under review). Passive acoustic monitoring and machine learning reveal habitat associations of gibbons in a protected area in Vietnam. Manuscript under review.
 
-This is the accompanying data for Vu et al. (under review)
+# Overview
 
+The associated R script examines environmental predictors of automated gibbon call detections in Chu Mom Ray National Park, Vietnam, using binomial generalized linear mixed-effects models (GLMMs).
 
+## Data
+
+Input: data/F_M_Regression.csv
+
+The response variable is the presence or absence of manually verified BirdNET gibbon detections. Environmental predictors include precipitation, rich/medium forest area within a 1-km radius (ha), canopy height, canopy cover, NDVI, distance to roads, and distance to villages.
+
+## Analysis
+
+The script fits ten candidate GLMMs, with recording location included as a random intercept. Models are compared using AICc and Akaike weights. Model diagnostics are performed using DHARMa.
+
+Predicted detection probabilities and 95% confidence intervals are plotted for distance to the nearest village and rich/medium forest area.
+
+# BirdNET Classifier
+
+The repository includes the best-performing BirdNET classifier developed for automated detection of gibbon vocalizations. Model development and performance evaluation are described in the associated manuscript.
